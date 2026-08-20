@@ -12,7 +12,7 @@ Scattered evidence. One traceable story.
 
 ## Problem
 
-When something goes wrong online — a marketplace purchase, a payment dispute, an impersonated account, a harassment incident — the evidence already exists. It is scattered across a phone, an inbox, a downloads folder and a chat export.
+When something goes wrong online, a marketplace purchase, a payment dispute, an impersonated account, a harassment incident, the evidence already exists. It is scattered across a phone, an inbox, a downloads folder and a chat export.
 
 Making sense of it means ordering it in time, spotting where two sources disagree, and being able to point at the exact line behind every statement. That work is slow, easy to get wrong, and it decides whether anyone takes the account seriously. It is also the part where a confident AI summary does the most damage: a fluent paragraph you cannot check is worse than no paragraph at all.
 
@@ -67,9 +67,9 @@ Everything in this repository. It was started from an empty directory; no code w
 
 ## Team contributions
 
-**[EDIT]** — fill in per person. Nothing has been assumed here.
 
-- *Name* — *role* — *what they built*
+
+- *Jayking* — *Full stack software developer* — *Proofline*
 
 ## AI tools used
 
@@ -131,6 +131,8 @@ None required. **[EDIT]** — if you deploy with Supabase and want to show live 
 
 ## Links
 
-- **Live URL** — **[EDIT]**
-- **Repository** — **[EDIT]**
-- **Video** — **[EDIT]**
+- **Live Demo:** [https://proofline-xyz.vercel.app](https://proofline-xyz.vercel.app)
+- **Repository:** [https://github.com/your-username/proofline](https://github.com/paulos-ui/proofline)
+- **Demo Video:** [https://youtu.be/your-video-id]
+- **Team Contributions:** 
+  - Architecture, smart contract integration, Merkle verification, and frontend execution.

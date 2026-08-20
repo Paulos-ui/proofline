@@ -23,7 +23,7 @@ export default function LandingPage() {
           <p className="prose-editorial mt-5">
             <span>
               Proofline turns screenshots, documents, messages, receipts and audio into a structured timeline where
-              every important claim leads back to its source — and gives you a way to tell, later, whether a file has
+              every important claim leads back to its source  and gives you a way to tell, later, whether a file has
               changed.
             </span>
           </p>
