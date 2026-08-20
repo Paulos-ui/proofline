@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Mark";
+import { AccountMenu } from "@/components/marketing/AccountMenu";
+import { createServerSupabase } from "@/lib/supabase/server";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 const NAV = [
   { href: "/demo", label: "Demo case" },
@@ -8,7 +11,23 @@ const NAV = [
   { href: "/about", label: "About" },
 ];
 
-export function MarketingHeader() {
+/**
+ * Reads the session on the server through the same Supabase request-scoped
+ * client used everywhere else, so the header can never disagree with a page
+ * like /dashboard about whether someone is signed in.
+ */
+async function currentUserEmail(): Promise<string | null> {
+  if (!isSupabaseConfigured()) return null;
+  const supabase = await createServerSupabase();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  return user?.email ?? null;
+}
+
+export async function MarketingHeader() {
+  const email = await currentUserEmail();
+
   return (
     <header className="sticky top-0 z-30 border-b backdrop-blur" style={{ borderColor: "var(--border-subtle)", background: "color-mix(in srgb, var(--surface-primary) 88%, transparent)" }}>
       <div className="mx-auto flex w-full max-w-[76rem] items-center justify-between gap-6 px-4 py-3 md:px-6">
@@ -21,9 +40,13 @@ export function MarketingHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/sign-in" className="btn btn-secondary ml-2 cursor-pointer text-sm">
-            Sign in
-          </Link>
+          {email ? (
+            <AccountMenu email={email} />
+          ) : (
+            <Link href="/sign-in" className="btn btn-secondary ml-2 cursor-pointer text-sm">
+              Sign in
+            </Link>
+          )}
         </nav>
       </div>
     </header>
