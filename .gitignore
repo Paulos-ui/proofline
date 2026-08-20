@@ -12,3 +12,5 @@ next-env.d.ts
 test-results/
 playwright-report/
 .DS_Store
+anchor-key.json
+*-key.json
