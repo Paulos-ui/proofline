@@ -21,59 +21,64 @@
 :root {
   color-scheme: light;
 
-  /* Mineral paper — cooler and greyer than a cream, closer to limestone. */
-  --surface-primary: #e9e7e1;
-  --surface-elevated: #f3f1ec;
-  --surface-sunken: #ddd9d1;
-  --ink-primary: #16181a;
-  --ink-secondary: #3b4045;
-  --ink-muted: #6a6f74;
-  --border-subtle: #cfccc4;
-  --border-strong: #b3aea4;
+  /* Warm off-white paper. Bright and clean, with the faintest warmth so it does
+     not read as clinical hospital white. */
+  --surface-primary: #fbfaf8;
+  --surface-elevated: #ffffff;
+  --surface-sunken: #f2f0ec;
+  --ink-primary: #17191c;
+  --ink-secondary: #40454b;
+  --ink-muted: #757b82;
+  --border-subtle: #e7e3dc;
+  --border-strong: #cfcabf;
 
-  --trace: #a9a69d;
-  --trace-active: #a85b32;
+  --trace: #c3bfb6;
+  /* Evidence accent: a warm terracotta that reads as considered rather than
+     corporate-blue, and carries the trace where the line is grounded. */
+  --trace-active: #bd5d34;
 
-  --evidence: #a85b32;
-  --evidence-soft: #f0e2d7;
-  --verified: #3f6b52;
-  --verified-soft: #dee9e0;
-  --warning: #7e6320;
-  --warning-soft: #f0e8d4;
-  --conflict: #8e3f4c;
-  --conflict-soft: #f2dee1;
-  --analysis: #4e5470;
-  --analysis-soft: #e2e2ea;
+  --evidence: #bd5d34;
+  --evidence-soft: #fbeadf;
+  --verified: #2f7d5b;
+  --verified-soft: #e2f1e9;
+  --warning: #9a7016;
+  --warning-soft: #fbf0d6;
+  --conflict: #b03b4c;
+  --conflict-soft: #fbe2e5;
+  --analysis: #4a5578;
+  --analysis-soft: #e9ebf4;
 
-  --focus-ring: #16181a;
+  --focus-ring: #17191c;
 }
 
-/* The evidence workspace. Applied to a subtree, not toggled globally. */
+/* The evidence workspace. A cooler, more focused paper than the editorial pages,
+   so the tool feels distinct from the marketing surface while staying light and
+   readable. Applied to a subtree, not toggled globally. */
 .surface-ink {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --surface-primary: #121417;
-  --surface-elevated: #191c20;
-  --surface-sunken: #0d0f11;
-  --ink-primary: #e7e5df;
-  --ink-secondary: #b9bcc0;
-  --ink-muted: #868c93;
-  --border-subtle: #262a2f;
-  --border-strong: #3a4046;
+  --surface-primary: #f4f5f7;
+  --surface-elevated: #ffffff;
+  --surface-sunken: #e9ebef;
+  --ink-primary: #16181c;
+  --ink-secondary: #3d434b;
+  --ink-muted: #6d747c;
+  --border-subtle: #e0e3e8;
+  --border-strong: #c6ccd3;
 
-  --trace: #3f464d;
-  --trace-active: #c97a4a;
+  --trace: #bcc2cb;
+  --trace-active: #bd5d34;
 
-  --evidence: #c97a4a;
-  --evidence-soft: #2c211a;
-  --verified: #74a183;
-  --verified-soft: #1b2620;
-  --warning: #c4a047;
-  --warning-soft: #2a2418;
-  --conflict: #c4707c;
-  --conflict-soft: #2b1c20;
-  --analysis: #8a90ae;
-  --analysis-soft: #1e2029;
+  --evidence: #bd5d34;
+  --evidence-soft: #fbeadf;
+  --verified: #2f7d5b;
+  --verified-soft: #e2f1e9;
+  --warning: #9a7016;
+  --warning-soft: #fbf0d6;
+  --conflict: #b03b4c;
+  --conflict-soft: #fbe2e5;
+  --analysis: #4a5578;
+  --analysis-soft: #e9ebf4;
 
   --focus-ring: #e7e5df;
 
