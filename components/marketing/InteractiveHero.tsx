@@ -117,7 +117,7 @@ export function InteractiveHero() {
         <div className="mt-5 min-h-[3.5rem]">
           {allPlaced ? (
             <p className="text-sm" style={{ color: "var(--ink-secondary)" }}>
-              Five unrelated files, now one ordered story — and{" "}
+              Five unrelated files, now one ordered story, and{" "}
               <span style={{ color: "var(--evidence)", fontWeight: 500 }}>the payment shows cleared and pending six minutes apart.</span>{" "}
               Proofline flags that, and shows you both sources.
             </p>
