@@ -49,7 +49,7 @@ export default function VerifyPage() {
               </a>
             </div>
             <p className="meta mt-3">
-              The original is registered in the manifest. The modified copy is not, and cannot be — its bytes produce a
+              The original is registered in the manifest. The modified copy is not, and cannot be its bytes produce a
               different digest.
             </p>
           </div>

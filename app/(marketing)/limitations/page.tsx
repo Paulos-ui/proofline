@@ -97,7 +97,7 @@ export default function LimitationsPage() {
             <li>Review extracted events before relying on them. The analysis can be wrong in ways that read fluently.</li>
             <li>Do not present a potential inconsistency as proof that someone was dishonest.</li>
             <li>Do not treat a fingerprint match as authentication of content.</li>
-            <li>Avoid uploading sensitive material casually — processing sends it to a model provider.</li>
+            <li>Avoid uploading sensitive material casually processing sends it to a model provider.</li>
             <li>Obtain permission before uploading data about other people where that is required of you.</li>
             <li>Proofline does not provide legal advice, and is not a substitute for it.</li>
             <li>Do not make an important decision on automated analysis alone.</li>

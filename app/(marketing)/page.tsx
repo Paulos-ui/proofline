@@ -39,7 +39,7 @@ export default function LandingPage() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/demo" className="btn btn-primary cursor-pointer">
-              See it work — no sign-up
+              See it work (no sign-up)
             </Link>
             <Link href="/sign-up" className="btn btn-secondary cursor-pointer">
               Start your own case
@@ -66,7 +66,7 @@ export default function LandingPage() {
             <p className="prose-editorial mt-4">
               <span>
                 Piecing it together means putting it in order, spotting where two things quietly disagree, and being
-                able to point at the exact line behind every claim. That&apos;s the slow part — and the part people get
+                able to point at the exact line behind every claim. That&apos;s the slow part and the part people get
                 wrong under pressure.
               </span>
             </p>
@@ -98,7 +98,7 @@ export default function LandingPage() {
             <p className="prose-editorial">
               <span>
                 Proofline never just summarises your evidence and asks you to take its word. Every event, claim and
-                connection remembers exactly where it came from — the file, and the spot inside it.
+                connection remembers exactly where it came from the file, and the spot inside it.
               </span>
             </p>
             <p className="prose-editorial mt-4">
@@ -241,7 +241,7 @@ export default function LandingPage() {
           </h2>
           <p className="prose-editorial mt-3 max-w-[48ch]">
             <span>
-              Screenshots, PDFs, receipts, emails, images, text files, audio — they can all become part of the same
+              Screenshots, PDFs, receipts, emails, images, text files, audio they can all become part of the same
               timeline in a few minutes.
             </span>
           </p>
