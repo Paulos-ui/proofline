@@ -33,7 +33,7 @@ export default function LandingPage() {
           </h1>
           <p className="prose-editorial mt-5 max-w-[52ch]">
             <span>
-              Drop in your screenshots, receipts, emails and voice notes. Get back one clear timeline — where every line
+              Drop in your screenshots, receipts, emails and voice notes. Get back one clear timeline where every line
               points to exactly where it came from, and you can prove nothing was quietly changed.
             </span>
           </p>
@@ -150,7 +150,7 @@ export default function LandingPage() {
             <p className="prose-editorial mt-4">
               <span>
                 Later, anyone can check a file against that record. A match proves the bytes are identical to what was
-                registered. It does <em>not</em> prove the content was ever true — and Proofline tells you that, on
+                registered. It does <em>not</em> prove the content was ever true and Proofline tells you that, on
                 screen, every single time.
               </span>
             </p>
