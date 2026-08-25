@@ -32,19 +32,24 @@
   --border-subtle: #e7e3dc;
   --border-strong: #cfcabf;
 
-  --trace: #c3bfb6;
-  /* Evidence accent: a warm terracotta that reads as considered rather than
-     corporate-blue, and carries the trace where the line is grounded. */
-  --trace-active: #bd5d34;
+  --trace: #cdc8bf;
+  /* Evidence accent: a warm coral-amber. Inviting and alive, but grounded enough
+     to stay credible for an evidence tool. It carries the trace where a line is
+     supported by a source. */
+  --trace-active: #e0662f;
 
-  --evidence: #bd5d34;
-  --evidence-soft: #fbeadf;
-  --verified: #2f7d5b;
-  --verified-soft: #e2f1e9;
-  --warning: #9a7016;
-  --warning-soft: #fbf0d6;
-  --conflict: #b03b4c;
-  --conflict-soft: #fbe2e5;
+  --evidence: #e0662f;
+  --evidence-soft: #fde8dc;
+  /* A calm teal as the second voice — guidance hints, "you are here", quiet
+     highlights — so the interface can point without shouting. */
+  --signal: #128a86;
+  --signal-soft: #d8efec;
+  --verified: #1f8a5f;
+  --verified-soft: #dcf2e7;
+  --warning: #a5741a;
+  --warning-soft: #fbefd4;
+  --conflict: #cc4133;
+  --conflict-soft: #fde3df;
   --analysis: #4a5578;
   --analysis-soft: #e9ebf4;
 
@@ -67,10 +72,12 @@
   --border-strong: #c6ccd3;
 
   --trace: #bcc2cb;
-  --trace-active: #bd5d34;
+  --trace-active: #e0662f;
 
-  --evidence: #bd5d34;
-  --evidence-soft: #fbeadf;
+  --evidence: #e0662f;
+  --evidence-soft: #fde8dc;
+  --signal: #128a86;
+  --signal-soft: #d8efec;
   --verified: #2f7d5b;
   --verified-soft: #e2f1e9;
   --warning: #9a7016;
@@ -99,6 +106,8 @@
   --color-trace-active: var(--trace-active);
   --color-evidence: var(--evidence);
   --color-evidence-soft: var(--evidence-soft);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
   --color-verified: var(--verified);
   --color-verified-soft: var(--verified-soft);
   --color-warning: var(--warning);
@@ -247,6 +256,78 @@
   opacity: 0;
   animation: node-settle 420ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: var(--node-delay, 0s);
+}
+
+/* A piece dropping onto the timeline in the interactive hero. */
+@keyframes hero-drop {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Scroll-reveal: elements start slightly low and fade up when they enter view.
+   Applied by the Reveal client component, which adds .is-visible. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 620ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 620ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* A soft lift on interactive cards. */
+.lift {
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 200ms ease;
+}
+.lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -18px rgba(23, 25, 28, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Analyzing loader: three nodes pulsing along a trace, echoing the brand motif. */
+.trace-loader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.trace-loader span {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--evidence);
+  animation: trace-pulse 1.1s ease-in-out infinite;
+}
+.trace-loader span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.trace-loader span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+@keyframes trace-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trace-loader span {
+    animation: none;
+    opacity: 0.7;
+  }
 }
 
 /* Nothing essential may depend on motion. */

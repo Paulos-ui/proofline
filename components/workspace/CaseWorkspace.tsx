@@ -58,6 +58,11 @@ export function CaseWorkspace({
           </Link>
           <div className="flex items-center gap-3">
             {bundle.case.isSynthetic ? <SyntheticBadge /> : null}
+            {!bundle.case.isSynthetic && bundle.case.status === "ready" ? (
+              <Link href={`/case/${bundle.case.id}?view=summary`} className="btn btn-quiet cursor-pointer text-sm">
+                Summary &amp; next steps
+              </Link>
+            ) : null}
             <Link href="/verify" className="btn btn-quiet cursor-pointer text-sm">
               Verify a file
             </Link>

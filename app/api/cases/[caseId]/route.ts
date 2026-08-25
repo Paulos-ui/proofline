@@ -1,6 +1,49 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { createServerSupabase } from "@/lib/supabase/server";
 import { supabaseConfig } from "@/lib/supabase/config";
+
+const UpdateCaseSchema = z.object({
+  title: z.string().trim().min(1).max(200).optional(),
+  description: z.string().trim().max(2000).nullable().optional(),
+});
+
+/**
+ * Updates a case's editable fields. Used by the guided flow to save the context a
+ * user adds before analysis. Row level security limits this to the case owner.
+ */
+export async function PATCH(request: Request, context: { params: Promise<{ caseId: string }> }) {
+  const { caseId } = await context.params;
+  const supabase = await createServerSupabase();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return NextResponse.json({ error: "Sign in to edit this case." }, { status: 401 });
+
+  const parsed = UpdateCaseSchema.safeParse(await request.json().catch(() => null));
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Nothing valid to update." }, { status: 400 });
+  }
+
+  const patch: Record<string, unknown> = {};
+  if (parsed.data.title !== undefined) patch.title = parsed.data.title;
+  if (parsed.data.description !== undefined) patch.description = parsed.data.description;
+  if (Object.keys(patch).length === 0) {
+    return NextResponse.json({ error: "Nothing to update." }, { status: 400 });
+  }
+
+  const { data, error } = await supabase
+    .from("cases")
+    .update(patch)
+    .eq("id", caseId)
+    .select("id, title, description")
+    .maybeSingle();
+
+  if (error || !data) {
+    return NextResponse.json({ error: "The case could not be updated." }, { status: 500 });
+  }
+  return NextResponse.json({ case: data });
+}
 
 /**
  * Deleting a case removes the stored evidence as well as the rows. Child tables cascade;
