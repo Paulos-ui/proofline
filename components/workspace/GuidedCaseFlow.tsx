@@ -155,7 +155,7 @@ export function GuidedCaseFlow({
       const response = await fetch(`/api/cases/${caseId}/process`, { method: "POST" });
       const body = (await response.json().catch(() => ({}))) as Partial<ProcessResult> & { error?: string };
       if (!response.ok) {
-        setError(body.error ?? "The analysis did not complete. Your files are safe — you can try again.");
+        setError(body.error ?? "The analysis did not complete. Your files are safe, you can try again.");
         setStage("context");
         return;
       }
@@ -183,7 +183,7 @@ export function GuidedCaseFlow({
         <Panel
           step="1"
           title="Bring together everything you have"
-          lede="Add every file that might matter — screenshots, receipts, emails, PDFs, images, text files, voice notes. You can always add more later. Each file is fingerprinted in your browser before it uploads."
+          lede="Add every file that might matter screenshots, receipts, emails, PDFs, images, text files, voice notes. You can always add more later. Each file is fingerprinted in your browser before it uploads."
         >
           <div
             onDragOver={(e) => {
@@ -275,7 +275,7 @@ export function GuidedCaseFlow({
         <Panel
           step="2"
           title="Tell Proofline what happened"
-          lede="A few sentences in your own words. This is not analysed as a claim — it helps the analysis read ambiguous files the way you would, and gives the eventual report something to orient around."
+          lede="A few sentences in your own words. This is not analysed as a claim, it helps the analysis read ambiguous files the way you would, and gives the eventual report something to orient around."
         >
           <textarea
             value={context}
@@ -465,7 +465,7 @@ function ResultPanel({ bundle, result, nextSteps }: { bundle: CaseBundle; result
         </h2>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: "var(--ink-muted)" }}>
           These are general options, not advice about your specific situation, and not legal guidance. Proofline
-          organises evidence — the decisions are yours.
+          organises evidence, the decisions are yours.
         </p>
 
         <ul className="m-0 mt-5 grid list-none gap-3 p-0 sm:grid-cols-2">
