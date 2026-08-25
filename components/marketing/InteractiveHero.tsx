@@ -83,7 +83,7 @@ export function InteractiveHero() {
     <div className="grid gap-6 lg:grid-cols-[1fr_1.35fr] lg:items-center">
       {/* Controls — the "you do something" side */}
       <div>
-        <p className="rail-label">Try it — drop each piece in</p>
+        <p className="rail-label">Try it: drop each piece in</p>
         <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Add evidence to the timeline">
           {PIECES.map((piece) => {
             const done = placed.includes(piece.id);
@@ -140,7 +140,7 @@ export function InteractiveHero() {
         ) : null}
       </div>
 
-      {/* The timeline — the result side */}
+      {/* The timeline: the result side */}
       <div
         className="relative rounded-xl border p-5 sm:p-6"
         style={{ background: "var(--surface-elevated)", borderColor: "var(--border-subtle)", minHeight: 340 }}
@@ -213,7 +213,7 @@ export function InteractiveHero() {
               !
             </span>
             <span className="text-sm" style={{ color: "var(--ink-primary)" }}>
-              Potential inconsistency found — cleared vs pending
+              Potential inconsistency found: cleared vs pending
             </span>
           </div>
         ) : null}
